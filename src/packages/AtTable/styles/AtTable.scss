@@ -18,8 +18,24 @@
     border-spacing: 0;
   }
 
+  tbody {
+    tr{
+      &:hover {
+        th, td{
+          background-color: $color-dark-10;
+        }
+      }
+    }
+  }
+
   th, td{
     // border: solid 1px $color-dark-20;
+  }
+
+  col{
+    &:hover{
+      background-color: $color-dark-10;
+    }
   }
 
 

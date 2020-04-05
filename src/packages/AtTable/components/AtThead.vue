@@ -7,9 +7,12 @@
         :class="{
           [`${atId}__col-${kebabCase(col.key)}`]: true,
         }"
+        :style="{
+          width: col.width ? col.width + 'px' : undefined,
+        }"
       >
     </colgroup>
-    <tr>
+    <tr class="at-table__tr">
       <th
         v-for="(col, index) in cols"
         :key="`col-${index+1}`"
@@ -47,9 +50,6 @@ export default {
   },
   methods: {
     kebabCase,
-    // colClass(key) {
-
-    // },
   },
 };
 </script>
