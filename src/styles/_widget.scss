@@ -1,0 +1,15 @@
+button{
+  @extend .global-font;
+}
+
+.btn{
+  appearance: none;
+
+  &-text{
+    @extend .btn;
+
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
