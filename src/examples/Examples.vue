@@ -8,6 +8,7 @@
           :cols="table.columns"
           border
           fixed
+          striped
         />
       </div>
     </div>

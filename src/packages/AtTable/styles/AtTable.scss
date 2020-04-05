@@ -4,6 +4,7 @@
 .at-table {
   $this: &;
   $color-bg: $color-lightest;
+  $color-striped: $color-light;
 
   position: relative;
 
@@ -56,6 +57,12 @@
       th{
         top: 0;
       }
+    }
+  }
+
+  &--striped {
+    tbody tr:nth-of-type(odd){
+      background-color: $color-striped;
     }
   }
 }

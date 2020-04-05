@@ -5,7 +5,8 @@
       [atId]: true,
       'at-table': true,
       'at-table--border': border,
-      'at-table--fixed': fixed
+      'at-table--fixed': fixed,
+      'at-table--striped': striped
     }"
   >
     <table
@@ -64,6 +65,10 @@ export default {
       default: false,
     },
     fixed: {
+      type: Boolean,
+      default: false,
+    },
+    striped: {
       type: Boolean,
       default: false,
     },
