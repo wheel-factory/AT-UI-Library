@@ -5,7 +5,7 @@
         v-for="(col, index) in cols"
         :key="`col-${index+1}`"
         :class="{
-          [`${atId}__col-${col.key}`]: true,
+          [`${atId}__col-${kebabCase(col.key)}`]: true,
         }"
       >
     </colgroup>
@@ -34,12 +34,19 @@
 </template>
 
 <script>
+import kebabCase from 'lodash/kebabCase';
 
 export default {
   name: 'AtThead',
   parent: 'AtTable',
   inject: ['atId', 'cols', 'fixed'],
+  computed: {
+    atIdKebabCase() {
+      return kebabCase(this.atId);
+    },
+  },
   methods: {
+    kebabCase,
     // colClass(key) {
 
     // },
