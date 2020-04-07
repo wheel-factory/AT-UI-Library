@@ -1,17 +1,19 @@
 <template>
   <div
     :id="atId"
-    class="at-table"
     :class="{
       [atId]: true,
+      'at-table': true,
       'at-table--border': border,
-      'at-table--fixed': fixed
+      'at-table--fixed': fixed,
+      'at-table--striped': striped
     }"
   >
     <table
       :style="{
         width: width ? `${width}px` : undefined,
       }"
+      :width="width ? width : undefined"
     >
       <at-thead />
       <at-tbody />
@@ -63,6 +65,10 @@ export default {
       default: false,
     },
     fixed: {
+      type: Boolean,
+      default: false,
+    },
+    striped: {
       type: Boolean,
       default: false,
     },

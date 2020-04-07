@@ -8,6 +8,7 @@
           :cols="table.columns"
           border
           fixed
+          striped
         />
       </div>
     </div>
@@ -31,24 +32,25 @@ export default {
         {
           key: 'first_name',
           label: 'First Name',
-          width: 200,
+          width: 120,
 
         },
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 200,
+          width: 120,
           fixed: 'left',
         },
         {
           key: 'phone_number',
           label: 'Phone Number',
-          width: 200,
+          width: 180,
+          align: 'right',
         },
         {
           key: 'email',
           label: 'Email',
-          width: 200,
+          width: 180,
         },
         {
           key: 'ip_address',

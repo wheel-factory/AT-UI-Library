@@ -4,6 +4,7 @@
 .at-table {
   $this: &;
   $color-bg: $color-lightest;
+  $color-striped: $color-light;
 
   position: relative;
 
@@ -18,8 +19,24 @@
     border-spacing: 0;
   }
 
+  tbody {
+    tr{
+      &:hover {
+        th, td{
+          background-color: $color-dark-10;
+        }
+      }
+    }
+  }
+
   th, td{
     // border: solid 1px $color-dark-20;
+  }
+
+  col{
+    &:hover{
+      background-color: $color-dark-10;
+    }
   }
 
 
@@ -40,6 +57,12 @@
       th{
         top: 0;
       }
+    }
+  }
+
+  &--striped {
+    tbody tr:nth-of-type(odd){
+      background-color: $color-striped;
     }
   }
 }
