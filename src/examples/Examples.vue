@@ -3,7 +3,7 @@
     <div class="example-container example-container-at-table">
       <div class="example-container__wrap">
         <at-table
-          at-id="example-table"
+          at-id="at-example-table"
           :rows="table.data"
           :cols="table.columns"
           border
@@ -39,7 +39,7 @@ export default {
           key: 'last_name',
           label: 'Last Name',
           width: 120,
-          fixed: 'left',
+
         },
         {
           key: 'phone_number',

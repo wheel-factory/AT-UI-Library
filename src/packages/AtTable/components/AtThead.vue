@@ -8,7 +8,7 @@
           [`${atId}__col-${kebabCase(col.key)}`]: true,
         }"
         :style="{
-          width: col.width ? col.width + 'px' : undefined,
+          width: col.width ? col.width + 'px' : false,
         }"
       >
     </colgroup>
