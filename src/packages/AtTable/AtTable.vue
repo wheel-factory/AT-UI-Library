@@ -128,7 +128,7 @@ export default {
         },
       });
       return css;
-    }, { [`#${this.atId}`]: { color: '#00F' } }));
+    }, {}));
   },
 };
 </script>

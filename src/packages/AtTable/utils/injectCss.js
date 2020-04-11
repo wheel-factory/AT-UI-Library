@@ -27,15 +27,14 @@ export default function (atId, cssObject) {
           .reduce((properties, property) => `${properties}${property[0]}:${property[1]};`, '')
       }}`, '');
 
-    const styleElement = document.getElementById(`${atId}-style`);
+    let styleElement = document.getElementById(`${atId}-style`);
 
     if (styleElement === null) {
-      const style = document.createElement('style');
-      style.setAttribute('id', `${atId}-style`);
-      style.innerText = cssString;
-      document.getElementsByTagName('head')[0].appendChild(style);
-    } else {
-      styleElement.innerText += cssString;
+      styleElement = document.createElement('style');
+      styleElement.setAttribute('id', `${atId}-style`);
+      document.getElementsByTagName('head')[0].appendChild(styleElement);
     }
+
+    styleElement.innerText = cssString;
   }
 }
