@@ -1,0 +1,14 @@
+// Response Design -- Max Window Width
+
+$min-width:     320;
+$mobile-max:    460;    //  320 ~ 460  -- Mobile Devices
+$portrait-max: 1020;    //  320 ~ 1020 -- Portrait Devices ( Mobile Devices & Portrait Tablet Devices )
+$tablet-max:   1200;    // 1020 ~ 1200 -- Horizontal Tablet Devices
+$desktop-max:  1680;    // 1200 ~ 1680 -- Desktop Devices
+                        // 1680 ~ ∞    -- Large Devices
+
+
+
+html, body, #root, .app{
+  height: 100%;
+}

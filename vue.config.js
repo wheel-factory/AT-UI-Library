@@ -1,12 +1,22 @@
 module.exports = {
-  outputDir: 'dist',
+  outputDir: 'demo',
   pages: {
     examples: {
-      entry: 'src/examples/main.js',
-      template: 'src/examples/index.html',
+      entry: 'examples/main.js',
+      template: 'examples/index.html',
       filename: 'index.html',
     },
   },
+  // chainWebpack: (config) => {
+  //   config.module
+  //     .rule('js')
+  //     .include
+  //     .add('/packages')
+  //     .end()
+  //     .use('babel')
+  //     .loader('babel-loader')
+  //     .tap((options) => options);
+  // },
   configureWebpack: {
     devtool: 'source-map',
   },
@@ -15,8 +25,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `
-          @import '@/styles/_variables.scss';
-          @import '@/styles/_mixins.scss';
+          @import '@/../components/styles/_variables.scss';
+          @import '@/../components/styles/_mixins.scss';
         `,
       },
     },
