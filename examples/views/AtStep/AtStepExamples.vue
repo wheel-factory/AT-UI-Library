@@ -1,15 +1,12 @@
 <template>
-  <aside
-    id="the-side-nav"
-    class="side-nav"
-  >
+  <div class="example example-at-step">
     <!--  -->
-  </aside>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'TheSideNav',
+  name: 'ExampleAtStep',
 };
 </script>
 

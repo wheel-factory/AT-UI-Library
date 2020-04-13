@@ -3,19 +3,25 @@
     id="components"
     class="components"
   >
-    <TheSideNav />
+    <SideNav
+      :list="atComponents"
+    />
     <router-view />
   </main>
 </template>
 
 <script>
-import TheSideNav from '../../components/TheSideNav.vue';
+import atComponents from '../../router/components';
+import SideNav from '../../components/SideNav.vue';
 
 export default {
   name: 'Components',
   components: {
-    TheSideNav,
+    SideNav,
   },
+  data: () => ({
+    atComponents,
+  }),
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="examples">
+  <div id="main">
     <TheHeader />
     <router-view />
     <TheFooter />
@@ -11,7 +11,7 @@ import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
 
 export default {
-  name: 'Examples',
+  name: 'Main',
   components: {
     TheHeader,
     TheFooter,

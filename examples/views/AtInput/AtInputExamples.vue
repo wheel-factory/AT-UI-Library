@@ -1,15 +1,12 @@
 <template>
-  <footer
-    id="the-footer"
-    class="footer"
-  >
+  <div class="example example-at-input">
     <!--  -->
-  </footer>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'ExampleAtInput',
 };
 </script>
 
