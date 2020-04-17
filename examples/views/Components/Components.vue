@@ -26,5 +26,10 @@ export default {
 </script>
 
 <style lang="scss">
-
+#components{
+  display: flex;
+}
+.components{
+  //
+}
 </style>
