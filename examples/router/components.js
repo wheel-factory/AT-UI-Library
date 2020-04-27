@@ -1,11 +1,20 @@
 export default [
   {
+    path: '/components/at-color',
+    name: 'Color',
+    group: 'global',
+    component: () => import(
+      /* webpackChunkName: "view-at-color" */
+      '../views/AtColor/ViewAtColor.vue'
+    ),
+  },
+  {
     path: '/components/at-step',
     name: 'Step',
     group: 'navigation',
     component: () => import(
-      /* webpackChunkName: "at-step-examples" */
-      '../views/AtStep/AtStepExamples.vue'
+      /* webpackChunkName: "view-at-step" */
+      '../views/AtStep/ViewAtStep.vue'
     ),
   },
   {
@@ -13,8 +22,8 @@ export default [
     name: 'Button',
     group: 'interactive',
     component: () => import(
-      /* webpackChunkName: "at-button-examples" */
-      '../views/AtButton/AtButtonExamples.vue'
+      /* webpackChunkName: "view-at-button" */
+      '../views/AtButton/ViewAtButton.vue'
     ),
   },
   {
@@ -22,8 +31,8 @@ export default [
     name: 'Input',
     group: 'interactive',
     component: () => import(
-      /* webpackChunkName: "at-input-examples" */
-      '../views/AtInput/AtInputExamples.vue'
+      /* webpackChunkName: "view-at-input" */
+      '../views/AtInput/ViewAtInput.vue'
     ),
   },
   {
@@ -31,8 +40,8 @@ export default [
     name: 'List',
     group: 'data display',
     component: () => import(
-      /* webpackChunkName: "at-list-examples" */
-      '../views/AtList/AtListExamples.vue'
+      /* webpackChunkName: "view-at-list" */
+      '../views/AtList/ViewAtList.vue'
     ),
   },
   {
@@ -40,8 +49,8 @@ export default [
     name: 'Table',
     group: 'data display',
     component: () => import(
-      /* webpackChunkName: "at-table-examples" */
-      '../views/AtTable/AtTableExamples.vue'
+      /* webpackChunkName: "view-at-table" */
+      '../views/AtTable/ViewAtTable.vue'
     ),
   },
 ];

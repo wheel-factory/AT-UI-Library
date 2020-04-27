@@ -1,5 +1,15 @@
 <template>
-  <button class="at-button">
+  <button
+    class="at-button"
+    :class="{
+      [type]: true,
+      [shape]: shape !== 'rectangle',
+      [size]: size !== 'normal',
+      [state]: state !== 'normal',
+    }"
+    :type="type === 'submit' || type === 'reset' ? type : 'button'"
+    :disabled="disabled || state=== 'disabled' ? true : false"
+  >
     <slot />
   </button>
 </template>
@@ -18,24 +28,45 @@ export default {
       type: String,
       default: 'button',
     },
-    theme: {
-      type: String,
-      default: '',
-      validator: (theme) => ['', 'capsule'].includes(theme),
-    },
     type: {
       type: String,
       default: 'minor',
-      validator: (theme) => ['major', 'minor'].includes(theme),
+      validator: (type) => ['major', 'minor', 'text', 'submit', 'button', 'reset'].includes(type),
+    },
+    shape: {
+      type: String,
+      default: 'rectangle',
+      validator: (shape) => ['rectangle', 'rounded', 'capsule'].includes(shape),
+    },
+    size: {
+      type: String,
+      default: 'normal',
+      validator: (size) => ['extra', 'large', 'normal', 'mini', 'micro', 'atom'].includes(size),
+    },
+    state: {
+      type: String,
+      default: 'normal',
+      validator: (state) => ['normal', 'hover', 'active', 'running', 'disabled'].includes(state),
+    },
+    active: {
+      type: Boolean,
+      default: false,
+    },
+    running: {
+      type: Boolean,
+      default: false,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
   },
+  computed: {
+    //
+  },
 };
 </script>
 
 <style lang="scss">
-
+@import './AtButton.scss';
 </style>

@@ -5,7 +5,18 @@ $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, 
 $font-monospace: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 // global
-$global-font: 12px/1em $font-family;
-$global-font-color: $color-gray-3;
+$global-background-color: $color-light;
 
-$global-radius: 4;
+$global-radius: 4px;
+
+$global-font-color: $color-gray-3;
+$global-font: 12px/1em $font-family;
+
+// size
+$size-base: 8px;
+
+$size-extra:  $size-base * 6;
+$size-large:  $size-base * 5;
+$size-normal: $size-base * 4;
+$size-mini:   $size-base * 3;
+$size-micro:  $size-base * 2;

@@ -27,9 +27,10 @@ export default {
 
 <style lang="scss">
 #components{
-  display: flex;
+
 }
 .components{
-  //
+  display: flex;
+  height: 100%;
 }
 </style>

@@ -24,6 +24,6 @@ export default {
 @import './assets/styles/examples.scss';
 
 #main{
-//
+  height: 100%;
 }
 </style>

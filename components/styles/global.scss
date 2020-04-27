@@ -16,10 +16,13 @@
 }
 
 .global-font{
-  font: $global-font;
   color: $global-font-color;
+  font: $global-font;
 }
 
 body{
+  background-color: $global-background-color;
+
   @extend .global-font;
 }
+
