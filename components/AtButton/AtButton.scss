@@ -34,15 +34,20 @@
     cursor: default;
   }
   &.running{
-    cursor: not-allowed;
+    --color-base: #{$color-major} !important;
   }
 
   &.disabled {
-    // pointer-events: none;
     --color-base: #{$color-dark-20};
 
     text-decoration: line-through;
+  }
+  &.running,  &.disabled{
     cursor: not-allowed;
+
+    &:active {
+      pointer-events: none;
+    }
   }
 
   // &.text, &.reset {

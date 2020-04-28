@@ -20,6 +20,10 @@
   font: $global-font;
 }
 
+html, body{
+  height: 100%;
+}
+
 body{
   background-color: $global-background-color;
 
