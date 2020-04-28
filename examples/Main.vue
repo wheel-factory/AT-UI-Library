@@ -20,5 +20,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../components/styles/global.scss';
+@import './assets/styles/examples.scss';
 
+#main{
+  height: 100%;
+}
 </style>

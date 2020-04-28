@@ -4,11 +4,12 @@ import Vue from 'vue';
 
 import AtUI from '../components';
 
-import './registerServiceWorker';
-
 import router from './router';
 import store from './store';
 // import i18n from './i18n';
+
+import './registerServiceWorker';
+import './components';
 
 // eslint-disable-next-line
 import Main from './Main.vue';
@@ -19,7 +20,6 @@ Vue.use(AtUI);
 
 Vue.config.devtools = true;
 Vue.config.productionTip = false;
-
 
 new Vue({
   router,

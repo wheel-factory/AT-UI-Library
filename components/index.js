@@ -1,7 +1,9 @@
-import AtButton from './AtButton/index';
+import AtButton from './AtButton';
+import AtButtonGroup from './AtButtonGroup';
 
 const components = [
   AtButton,
+  AtButtonGroup,
 ];
 
 const install = (Vue) => {
@@ -16,4 +18,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   AtButton,
+  AtButtonGroup,
 };

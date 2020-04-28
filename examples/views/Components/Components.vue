@@ -26,5 +26,11 @@ export default {
 </script>
 
 <style lang="scss">
+#components{
 
+}
+.components{
+  display: flex;
+  height: 100%;
+}
 </style>

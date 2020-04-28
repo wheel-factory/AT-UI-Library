@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+// import guides from './guides';
 import components from './components';
 
 Vue.use(VueRouter);
@@ -18,6 +19,7 @@ const routes = [
       /* webpackChunkName: "guides" */
       '../views/Guides/Guides.vue'
     ),
+    // children: guides,
   },
   {
     path: '/components',

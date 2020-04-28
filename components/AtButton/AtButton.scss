@@ -1,0 +1,105 @@
+.at-button{ // reset
+  appearance: none;
+
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+
+  font-size: 100%;
+  font-family: inherit;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.at-button {
+  --color-base: #{$color-major};
+  --button-size: #{$size-normal};
+
+  height: var(--button-size);
+
+  padding: 0 calc(var(--button-size) / 2);
+  border: solid 2px transparent;
+
+  color: var(--color-base);
+  font-size: calc(var(--button-size) / 2 - var(--button-size) / 16);
+  line-height: calc(var(--button-size) - 4);
+
+  &:hover, &.hover{
+    --color-base: #{$color-major-hover};
+  }
+  &:active, &.active{
+    cursor: default;
+  }
+  &.running{
+    --color-base: #{$color-major} !important;
+  }
+
+  &.disabled {
+    --color-base: #{$color-dark-20};
+
+    text-decoration: line-through;
+  }
+  &.running,  &.disabled{
+    cursor: not-allowed;
+
+    &:active {
+      pointer-events: none;
+    }
+  }
+
+  // &.text, &.reset {
+  //
+  // }
+
+  &.minor {
+    border-color: var(--color-base);
+  }
+  &.major, &.submit {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+    color: $color-lightest;
+  }
+
+  &.rounded {
+    border-radius: $global-radius;
+  }
+  &.capsule {
+    border-radius: calc(var(--button-size) / 2);
+  }
+
+  &.extra {
+    --button-size: #{$size-extra};
+  }
+
+  &.large {
+    --button-size: #{$size-large};
+  }
+
+  &.mini{
+    --button-size: #{$size-mini};
+
+    text-transform: capitalize;
+  }
+
+  &.micro{
+    --button-size: #{$size-micro};
+
+    text-transform: lowercase;
+  }
+
+  &.atom{
+    height: auto;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: none;
+  }
+
+
+
+}
+
