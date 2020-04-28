@@ -1,7 +1,10 @@
 <template>
-  <section class="section section-at-button-type">
+  <section
+    id="type"
+    class="section section-at-button-type"
+  >
     <ExampleContainer
-      title="Button Type"
+      title="AtButton Type"
     >
       <at-button-group>
         <at-button type="text">

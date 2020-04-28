@@ -33,9 +33,9 @@
   &:active, &.active{
     cursor: default;
   }
-  // &.running{
-
-  // }
+  &.running{
+    --color-base: #{$color-major} !important;
+  }
 
   &.disabled {
     --color-base: #{$color-dark-20};

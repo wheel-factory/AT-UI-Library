@@ -1,7 +1,10 @@
 <template>
-  <section class="section section-at-button-status">
+  <section
+    id="state"
+    class="section section-at-button-state"
+  >
     <ExampleContainer
-      title="Button State"
+      title="AtButton State"
     >
       <at-button-group>
         <at-button>

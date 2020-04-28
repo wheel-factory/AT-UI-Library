@@ -33,6 +33,32 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="scss">
+.example-container{
+  position: relative;
 
+  padding: 30px 20px;
+
+  border: solid 1px $color-dark-10;
+
+  margin: 40px 0;
+
+  &__title{
+    $height: 20px;
+
+    position: absolute;
+    top: -$height / 2;
+    left: 10px;
+
+    background-color: $color-light;
+
+    padding: 0 10px;
+
+    color: $color-dark-60;
+    font-size: 14px;
+    line-height: $height;
+
+    // text-transform: uppercase;
+  }
+}
 </style>

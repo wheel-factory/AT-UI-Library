@@ -1,7 +1,7 @@
 <template>
   <section class="section section-at-button-Size">
     <ExampleContainer
-      title="Button Size"
+      title="AtButton Size"
     >
       <at-button-group>
         <at-button

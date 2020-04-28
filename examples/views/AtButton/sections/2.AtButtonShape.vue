@@ -1,7 +1,10 @@
 <template>
-  <section class="section section-at-button-shape">
+  <section
+    id="shape"
+    class="section section-at-button-shape"
+  >
     <ExampleContainer
-      title="Button Shape"
+      title="AtButton Shape"
     >
       <at-button-group>
         <at-button>

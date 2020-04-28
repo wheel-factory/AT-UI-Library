@@ -34,12 +34,12 @@ $color-soothing-breeze:     #B2BEC3;
 $color-city-lights:         #DFE6E9;
 
 
-$color-major: $color-electron-blue;
-$color-major-hover: $color-green-darner-tail;
+$color-major: $color-electron-blue; // temp
+$color-major-hover: $color-green-darner-tail; // temp
 
-$color-minor: $color-gray-9;
+$color-minor: $color-gray-9; // temp
 
 :root {
-  --color-major: #{$color-electron-blue};
-  --color-minor: #{$color-gray-9};
+  --color-major: #{$color-major};
+  --color-minor: #{$color-minor};
 }

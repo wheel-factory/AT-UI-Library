@@ -1,5 +1,8 @@
 <template>
-  <section class="section section-at-button-type">
+  <section
+    id="intro"
+    class="section section-at-button-intro"
+  >
     <h3>AtButton</h3>
   </section>
 </template>
