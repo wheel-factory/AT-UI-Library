@@ -1,9 +1,13 @@
 import AtButton from './AtButton';
 import AtButtonGroup from './AtButtonGroup';
 
+import AtTable from './AtTable';
+
 const components = [
   AtButton,
   AtButtonGroup,
+
+  AtTable,
 ];
 
 const install = (Vue) => {
@@ -19,4 +23,6 @@ export default {
   install,
   AtButton,
   AtButtonGroup,
+
+  AtTable,
 };

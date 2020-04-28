@@ -27,7 +27,7 @@
 <script>
 import uid from 'uid';
 
-import injectCss from './utils/injectCss';
+import injectCss from '../utils/injectCss';
 
 import AtThead from './components/AtThead.vue';
 import AtTbody from './components/AtTbody.vue';
