@@ -16,8 +16,8 @@
       <th
         v-for="(col, index) in cols"
         :key="`col-${index+1}`"
-        class="at-table__thead-th"
         :class="{
+          'at-table__thead-th': true,
           'at-table__th--sticky': fixed,
           'at-table__th--sticky-left': col.fixed === 'left',
           'at-table__th--sticky-right': col.fixed === 'right',

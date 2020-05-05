@@ -3,11 +3,13 @@
   $color-background: $color-lightest;
   $color-striped: $color-light;
   --size: #{$size-normal};
+  --border: transparent;
 
   position: relative;
 
   padding: 0 $size-base $size-base; // table
   background-color: $color-background;
+
 
   line-height: var(--size);
   text-align: left;
@@ -38,6 +40,10 @@
   &__th, &__td{
     padding: 0;
     border-bottom: solid 1px $color-dark-10;
+    border-right: solid 1px var(--border);
+    &:last-child{
+      border-right: none;
+    }
   }
 
   &__cell{
@@ -47,20 +53,17 @@
     vertical-align: middle;
   }
 
-  // col{
-  //   &:hover{
-  //     background-color: $color-dark-10;
-  //   }
-  // }
-  //
-  //
-  //
-  //
   &--border{
-    // border: solid 2px $color-dark-10;
+    border: solid 2px var(--border);
+    --border: #{$color-dark-10};
   }
   //
   //
+  &--striped {
+    tbody tr:nth-of-type(odd){
+      background-color: $color-striped;
+    }
+  }
   //
   //
   &--fixed {
@@ -81,9 +84,5 @@
   //
   //
   //
-  &--striped {
-    tbody tr:nth-of-type(odd){
-      background-color: $color-striped;
-    }
-  }
+
 }
