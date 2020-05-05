@@ -16,7 +16,7 @@ function purifyObject(obj) {
 export default function (atId, cssObject) {
   if (
     atId
-    && /(?!-)^[a-z|-]+(?<!-)$/g.test(atId)
+    // && /(?!-)^[a-z|-]+(?<!-)$/g.test(atId)
     && cssObject
     && typeof cssObject === 'object'
     && Object.keys(cssObject).length

@@ -6,8 +6,9 @@
       <td
         v-if="!col.fixed"
         :key="`cell-${index}`"
+        class="at-table__td"
       >
-        <span class="at-cell">
+        <span class="at-table__cell">
           {{ row[col.key] }}
         </span>
       </td>
@@ -15,15 +16,16 @@
         v-else
         :key="`cell-${index}`"
         :class="{
-          'at--sticky': col.fixed,
-          'at--sticky-left': col.fixed === 'left',
-          'at--sticky-right': col.fixed === 'right',
+          'at-table__th': true,
+          'at-table__th--sticky': col.fixed,
+          'at-table__th--sticky-left': col.fixed === 'left',
+          'at-table__th--sticky-right': col.fixed === 'right',
         }"
         :style="{
           left:0
         }"
       >
-        <span class="at-cell">
+        <span class="at-table__cell">
           {{ row[col.key] }}
         </span>
       </th>

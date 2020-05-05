@@ -1,5 +1,7 @@
 <template>
-  <div class="example-container">
+  <div
+    class="example-container"
+  >
     <div class="example-container__title">
       {{ title }}
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="view view-at-color">
-    <h2>Color</h2>
+    <h3>Color</h3>
     <hr>
     <div class="color-swatches color-swatches-gray">
       <h4>Gray</h4>
