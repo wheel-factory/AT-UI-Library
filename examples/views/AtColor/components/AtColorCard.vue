@@ -36,7 +36,7 @@ export default {
     HSB() {
       const max = Math.max(...Object.values(this.RGB));
       const min = Math.min(...Object.values(this.RGB));
-      const B = Math.round((max / 255) * 100) / 100;
+      const B = Math.round((max / 255) * 1000) / 1000;
       const S = (() => {
         if (B === 0 || max === min) return 0;
         return 1 - min / max;

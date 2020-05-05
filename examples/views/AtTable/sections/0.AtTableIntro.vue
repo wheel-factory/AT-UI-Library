@@ -1,16 +1,15 @@
 <template>
   <section
     id="intro"
-    class="section section-at-button-intro"
+    class="section section-at-table-intro"
   >
-    <h3>AtButton</h3>
-    <hr>
+    <h3>AtTable</h3>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'SectionAtButtonIntro',
+  name: 'AtTableIntro',
 };
 </script>
 
