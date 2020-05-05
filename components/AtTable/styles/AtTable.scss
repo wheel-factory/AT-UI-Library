@@ -1,65 +1,86 @@
-.at-cell{
-  padding: 0 10px;
-}
 .at-table {
   $this: &;
-  $color-bg: $color-lightest;
+  $color-background: $color-lightest;
   $color-striped: $color-light;
+  --size: #{$size-normal};
 
   position: relative;
 
-  line-height: 30px;
+  padding: 0 $size-base $size-base; // table
+  background-color: $color-background;
+
+  line-height: var(--size);
   text-align: left;
 
-  table{
+  &__table{
     min-width: 100%;
-    // border: solid 1px $color-dark-20;
-    border-top: none;
-    // border-collapse: collapse;
+    border-collapse: separate;
     border-spacing: 0;
   }
 
-  tbody {
-    tr{
-      &:hover {
-        th, td{
-          background-color: $color-dark-10;
-        }
+  &__thead{
+    line-height: calc(var(--size) + #{$size-base});
+
+    &-th{
+      padding: 0;
+      border-bottom: solid 2px $color-major;
+    }
+  }
+
+  &__tr{
+    &:hover {
+      th, td{
+        background-color: $color-light;
       }
     }
   }
 
-  th, td{
-    // border: solid 1px $color-dark-20;
+  &__th, &__td{
+    padding: 0;
+    border-bottom: solid 1px $color-dark-10;
   }
 
-  col{
-    &:hover{
-      background-color: $color-dark-10;
-    }
+  &__cell{
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 1.5em;
+    vertical-align: middle;
   }
 
-
+  // col{
+  //   &:hover{
+  //     background-color: $color-dark-10;
+  //   }
+  // }
+  //
+  //
+  //
+  //
+  &--border{
+    // border: solid 2px $color-dark-10;
+  }
+  //
+  //
+  //
+  //
   &--fixed {
     width: 100%;
     height: 100%;
     overflow: auto;
-
-    th{
+    tbody{
+      margin: 2px 0 0;
+    }
+    #{$this}__th--sticky{
       position: sticky;
-      background-color: rgba($color-bg, 0.9);
+      background-color: rgba($color-background, 0.9);
       backdrop-filter: blur(2px);
       z-index: 2;
     }
-
-    #{$this}__thead{
-
-      th{
-        top: 0;
-      }
-    }
   }
-
+  //
+  //
+  //
+  //
   &--striped {
     tbody tr:nth-of-type(odd){
       background-color: $color-striped;

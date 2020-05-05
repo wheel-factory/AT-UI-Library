@@ -10,6 +10,7 @@
     }"
   >
     <table
+      class="at-table__table"
       :style="{
         width: width ? `${width}px` : undefined,
       }"
@@ -27,7 +28,7 @@
 <script>
 import uid from 'uid';
 
-import injectCss from '../utils/injectCss';
+// import injectCss from '../utils/injectCss';
 
 import AtThead from './components/AtThead.vue';
 import AtTbody from './components/AtTbody.vue';
@@ -57,7 +58,7 @@ export default {
       type: String,
       required: true,
       default: `at-${uid(6)}`,
-      validator: (id) => /(?!-)^[a-z|-]+(?<!-)$/g.test(id),
+      // validator: (id) => /(?!-)^[a-z|-]+(?<!-)$/g.test(id),
     },
     rows: {
       type: Array,
@@ -118,17 +119,17 @@ export default {
     },
   },
   created() {
-    injectCss(this.atId, this.cols.reduce((css, col, index) => {
-      Object.defineProperties(css, {
-        [`#${this.atId} tr>*:nth-child(${index + 1})`]: {
-          enumerable: true,
-          value: {
-            'text-align': col.align,
-          },
-        },
-      });
-      return css;
-    }, {}));
+    // injectCss(this.atId, this.cols.reduce((css, col, index) => {
+    //   Object.defineProperties(css, {
+    //     [`#${this.atId} tr>*:nth-child(${index + 1})`]: {
+    //       enumerable: true,
+    //       value: {
+    //         'text-align': col.align,
+    //       },
+    //     },
+    //   });
+    //   return css;
+    // }, {}));
   },
 };
 </script>

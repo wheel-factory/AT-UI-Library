@@ -9,7 +9,7 @@ export default {
     atId: {
       type: String,
       required: true,
-      validator: (id) => /(?!-)^[a-z|-]+(?<!-)$/g.test(id),
+      // validator: (id) => /(?!-)^[a-z|-]+(?<!-)$/g.test(id),
     },
     tag: {
       type: String,

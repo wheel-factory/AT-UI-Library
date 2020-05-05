@@ -12,23 +12,24 @@
         }"
       >
     </colgroup>
-    <tr class="at-table__tr">
+    <tr class="at-table__thead-tr">
       <th
         v-for="(col, index) in cols"
         :key="`col-${index+1}`"
+        class="at-table__thead-th"
         :class="{
-          'at--sticky': fixed,
-          'at--sticky-top': fixed,
-          'at--sticky-left': col.fixed === 'left',
-          'at--sticky-right': col.fixed === 'right',
+          'at-table__th--sticky': fixed,
+          'at-table__th--sticky-left': col.fixed === 'left',
+          'at-table__th--sticky-right': col.fixed === 'right',
         }"
         :style="{
           width: col.width ? col.width + 'px' : undefined,
+          top: fixed ? 0 : undefined,
           left: col.fixed ? 0 : undefined,
           'z-index': col.fixed ? 4 : undefined,
         }"
       >
-        <span class="at-cell">
+        <span class="at-table__cell">
           {{ col.label }}
         </span>
       </th>
