@@ -22,7 +22,8 @@
           'at-table__th--sticky-right': col.fixed === 'right',
         }"
         :style="{
-          left:0
+          left: col.left && `${col.left}px`,
+          right: col.right && `${col.right}px`,
         }"
       >
         <span class="at-table__cell">

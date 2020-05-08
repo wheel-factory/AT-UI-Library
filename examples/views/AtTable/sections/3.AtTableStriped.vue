@@ -1,15 +1,16 @@
 <template>
   <section
-    id="base"
-    class="section section-at-table-base"
+    id="striped"
+    class="section section-at-table-striped"
   >
     <ExampleContainer
-      title="AtTable Base"
+      title="AtTable Striped"
     >
       <at-table
         at-id="example-table"
         :rows="table.data"
         :columns="table.columns"
+        striped
       />
     </ExampleContainer>
   </section>
@@ -18,7 +19,7 @@
 <script>
 
 export default {
-  name: 'AtTableBase',
+  name: 'AtTableStriped',
   data: () => ({
     table: {
       data: [
