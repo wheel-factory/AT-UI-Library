@@ -10,6 +10,7 @@
         :style="{
           width: col.width ? col.width + 'px' : false,
         }"
+        :width="col.width ? col.width : false"
       >
     </colgroup>
     <tr class="at-table__thead-tr">
@@ -25,7 +26,8 @@
         :style="{
           width: col.width ? col.width + 'px' : undefined,
           top: fixed ? 0 : undefined,
-          left: col.fixed ? 0 : undefined,
+          left: col.left && `${col.left}px`,
+          right: col.right && `${col.right}px`,
           'z-index': col.fixed ? 4 : undefined,
         }"
       >

@@ -9,6 +9,7 @@
       'at-table--striped': striped
     }"
   >
+    <!-- <div class="at-table__wrap"> -->
     <table
       class="at-table__table"
       :style="{
@@ -22,6 +23,7 @@
         v-if="false"
       />
     </table>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -69,7 +71,7 @@ export default {
       //   return true;
       // },
     },
-    cols: {
+    columns: {
       type: Array,
       required: true,
       default: () => ([]),
@@ -114,9 +116,37 @@ export default {
     return store;
   },
   computed: {
+    cols() {
+      let cols = this.columns;
+
+      if (this.fixed) {
+        // eslint-disable-next-line no-nested-ternary
+        const fixedLeftColWidth = this.columns.map((col) => (col.fixed === 'left' ? (col.width ? col.width : 0) : 0));
+        // eslint-disable-next-line no-nested-ternary
+        const fixedRightColWidth = this.columns.map((col) => (col.fixed === 'right' ? (col.width ? col.width : 0) : 0));
+        cols = cols.map((col, index) => {
+          if (col.fixed === 'left') {
+            return {
+              ...col,
+              left: fixedLeftColWidth.slice(0, index).reduce((acc, cur) => (acc + cur), 0),
+            };
+          } if (col.fixed === 'right') {
+            return {
+              ...col,
+              right: fixedRightColWidth.slice(index + 1).reduce((acc, cur) => (acc + cur), 0),
+            };
+          }
+          return col;
+        });
+      }
+
+      return cols;
+    },
+
     width() {
       return this.cols.reduce((acc, cur) => (acc + Number(cur.width)), 0) || undefined;
     },
+
   },
   created() {
     // injectCss(this.atId, this.cols.reduce((css, col, index) => {
