@@ -1,6 +1,6 @@
 {
-  "name": "alltask-ui-library",
-  "version": "0.3.0",
+  "name": "at-ui-library",
+  "version": "0.0.3",
   "private": true,
   "main": "",
   "scripts": {
