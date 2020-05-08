@@ -20,15 +20,17 @@ export default {
 .box-a{
   width: 400px;
   height: 400px;
-  overflow: visible;
+  overflow: auto;
 }
 .box-b{
-  display: inline-block;
+  width: 100%;
+  height: 100%;
   padding: 0 20px;
   background: #FFF;
-  overflow: visible;
+  overflow: auto;
 }
 .box-c{
+  display: table;
   width: 800px;
   height: 600px;
   background: #CCC;
