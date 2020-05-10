@@ -123,7 +123,6 @@ export default {
         {
           key: 'email',
           label: 'Email',
-          width: 180,
         },
         {
           key: 'ip_address',
