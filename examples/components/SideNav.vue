@@ -19,8 +19,8 @@
         >
           <router-link
             class="side-nav__link"
-            :to="item.path"
             active-class="side-nav__link--active"
+            :to="item.path"
           >
             {{ item.name }}
           </router-link>
