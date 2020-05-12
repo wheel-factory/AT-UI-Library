@@ -23,6 +23,11 @@ A VUE.js Base UI Library
   * Android Chrome 81+
   * Android Firefox 68+
   * iOS Safari 6+
+  
+### Features used cause compatibility
+
+* [CSS Variables](https://caniuse.com/#feat=css-variables)
+* [position:sticky](https://caniuse.com/#feat=css-sticky)
 
 
 --------
