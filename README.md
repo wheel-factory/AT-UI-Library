@@ -16,6 +16,7 @@ A VUE.js Base UI Library
   * Firefox 32+
   * ~~IE~~
   * Opera 42+
+  * Safari 6.1+
   
 * Mobile
   * Android Browser 46+
