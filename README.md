@@ -7,6 +7,24 @@ A VUE.js Base UI Library
 
 
 --------
+
+## Browser Compatibility
+
+* Desktop
+  * Chrome 56+
+  * Edge 16+
+  * Firefox 32+
+  * ~~IE~~
+  * Opera 42+
+  
+* Mobile
+  * Android Browser 46+
+  * Android Chrome 81+
+  * Android Firefox 68+
+  * iOS Safari 6+
+
+
+--------
 ## Todo List
 * [ ] Base Structure
   * [ ] Try use the [rollup.js](https://rollupjs.org/guide/en/) to packaging [components](./tree/master/components)
