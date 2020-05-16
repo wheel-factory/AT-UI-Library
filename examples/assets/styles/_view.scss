@@ -1,7 +1,13 @@
 .view{
+  position: relative;
+  display: flow-root;
   width: 100%;
-
-  padding: 20px;
+  &__wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px;
+  }
 }
 
 // .example-container {

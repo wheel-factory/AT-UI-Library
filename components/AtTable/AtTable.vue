@@ -6,7 +6,8 @@
       'at-table': true,
       'at-table--border': border,
       'at-table--fixed': fixed,
-      'at-table--striped': striped
+      'at-table--striped': striped,
+      [`at-table--size-${size}`]: size !== 'normal',
     }"
   >
     <!-- <div class="at-table__wrap"> -->
@@ -15,7 +16,6 @@
       :style="{
         width: width ? `${width}px` : undefined,
       }"
-      :width="width ? width : undefined"
     >
       <at-thead />
       <at-tbody />
@@ -92,6 +92,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    size: {
+      type: String,
+      default: 'normal',
+      validator: (size) => ['extra', 'large', 'normal', 'mini'].includes(size),
+    },
   },
   provide() {
     const store = {};
@@ -117,20 +122,20 @@ export default {
   },
   computed: {
     cols() {
-      let cols = this.columns;
-
+      // Need Improve: Modify to use reduce & reduceRight. And mark the first and last.
       if (this.fixed) {
         // eslint-disable-next-line no-nested-ternary
         const fixedLeftColWidth = this.columns.map((col) => (col.fixed === 'left' ? (col.width ? col.width : 0) : 0));
         // eslint-disable-next-line no-nested-ternary
         const fixedRightColWidth = this.columns.map((col) => (col.fixed === 'right' ? (col.width ? col.width : 0) : 0));
-        cols = cols.map((col, index) => {
+        return this.columns.map((col, index) => {
           if (col.fixed === 'left') {
             return {
               ...col,
               left: fixedLeftColWidth.slice(0, index).reduce((acc, cur) => (acc + cur), 0),
             };
-          } if (col.fixed === 'right') {
+          }
+          if (col.fixed === 'right') {
             return {
               ...col,
               right: fixedRightColWidth.slice(index + 1).reduce((acc, cur) => (acc + cur), 0),
@@ -140,7 +145,7 @@ export default {
         });
       }
 
-      return cols;
+      return this.columns;
     },
 
     width() {

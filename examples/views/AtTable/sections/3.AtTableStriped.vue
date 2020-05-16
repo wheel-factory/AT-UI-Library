@@ -113,7 +113,7 @@ export default {
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 140,
+          width: 120,
         },
         {
           key: 'phone_number',
@@ -124,7 +124,6 @@ export default {
         {
           key: 'email',
           label: 'Email',
-          width: 180,
         },
         {
           key: 'ip_address',

@@ -1,15 +1,37 @@
 <template>
   <section
-    id="base"
+    id="Size"
     class="section section-at-table-base"
   >
-    <ExampleContainer
-      title="AtTable Base"
-    >
+    <ExampleContainer title="AtTable Size">
       <at-table
         at-id="example-table"
         :rows="table.data"
         :columns="table.columns"
+        size="mini"
+        style="margin: 0 0 40px"
+      />
+
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns"
+        style="margin: 0 0 40px"
+      />
+
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns"
+        size="large"
+        style="margin: 0 0 40px"
+      />
+
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns"
+        size="extra"
       />
     </ExampleContainer>
   </section>
@@ -112,7 +134,7 @@ export default {
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 120,
+          width: 140,
         },
         {
           key: 'phone_number',

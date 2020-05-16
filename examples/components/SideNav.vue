@@ -8,9 +8,9 @@
       :key="group.id"
       class="side-nav__group"
     >
-      <h3 class="side-nav__group-label">
+      <div class="side-nav__group-label">
         {{ group.id }}
-      </h3>
+      </div>
       <ul class="side-nav__list">
         <li
           v-for="item in group.components"
@@ -64,6 +64,7 @@ export default {
 .side-nav{
   $side-nav-line-height: 40px;
 
+  flex-shrink: 0;
   width: 240px;
   height: 100%;
 

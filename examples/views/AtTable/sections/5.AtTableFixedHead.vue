@@ -3,22 +3,17 @@
     id="fixed-head"
     class="section section-at-table-fixed-head"
   >
-    <ExampleContainer
-      title="AtTable Fixed Head"
-    >
-      <div
-        :style="{
-          width: '100%',
-          height: '380px',
-        }"
-      >
-        <at-table
-          at-id="example-table"
-          :rows="table.data"
-          :columns="table.columns"
-          fixed
-        />
-      </div>
+    <ExampleContainer title="AtTable Fixed Head">
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns"
+        fixed
+        style="
+          width: 100%;
+          height: 380px;
+        "
+      />
     </ExampleContainer>
   </section>
 </template>
@@ -296,7 +291,7 @@ export default {
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 140,
+          width: 120,
         },
         {
           key: 'phone_number',
@@ -307,7 +302,6 @@ export default {
         {
           key: 'email',
           label: 'Email',
-          width: 180,
         },
         {
           key: 'ip_address',

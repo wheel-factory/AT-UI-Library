@@ -3,65 +3,51 @@
     id="fixed-column"
     class="section section-at-table-fixed-column"
   >
-    <ExampleContainer
-      title="AtTable Fixed Column"
-    >
-      <div
-        :style="{
-          width: '800px',
-          height: '380px',
-          margin: '0 0 40px',
-        }"
-      >
-        <at-table
-          at-id="example-table"
-          :rows="table.data"
-          :columns="table.columns_e1"
-          fixed
-        />
-      </div>
-      <div
-        :style="{
-          width: '800px',
-          height: '380px',
-          margin: '0 0 40px',
-        }"
-      >
-        <at-table
-          at-id="example-table"
-          :rows="table.data"
-          :columns="table.columns_e2"
-          fixed
-        />
-      </div>
-      <div
-        :style="{
-          width: '800px',
-          height: '380px',
-          margin: '0 0 40px',
-        }"
-      >
-        <at-table
-          at-id="example-table"
-          :rows="table.data"
-          :columns="table.columns_e3"
-          fixed
-        />
-      </div>
-      <div
-        :style="{
-          width: '800px',
-          height: '380px',
-          margin: '0 0 40px',
-        }"
-      >
-        <at-table
-          at-id="example-table"
-          :rows="table.data"
-          :columns="table.columns_e4"
-          fixed
-        />
-      </div>
+    <ExampleContainer title="AtTable Fixed Column">
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns_e1"
+        fixed
+        style="
+          max-width: 1400px;
+          height: 380px;
+          margin: 0 0 40px;
+        "
+      />
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns_e2"
+        fixed
+        style="
+
+          height: 380px;
+          margin: 0 0 40px;
+        "
+      />
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns_e3"
+        fixed
+        style="
+          max-width: 1400px;
+          height: 380px;
+          margin: 0 0 40px;
+        "
+      />
+      <at-table
+        at-id="example-table"
+        :rows="table.data"
+        :columns="table.columns_e4"
+        fixed
+        style="
+          max-width: 1400px;
+          height: 380px;
+          margin: 0 0 40px;
+        "
+      />
     </ExampleContainer>
   </section>
 </template>
@@ -340,8 +326,14 @@ export default {
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 140,
+          width: 120,
           fixed: 'left',
+        },
+        {
+          key: 'phone_number',
+          label: 'Phone Number',
+          width: 240,
+          align: 'right',
         },
         {
           key: 'phone_number',
@@ -355,9 +347,19 @@ export default {
           width: 240,
         },
         {
+          key: 'email',
+          label: 'Email',
+          width: 240,
+        },
+        {
           key: 'ip_address',
           label: 'IP Address',
-          width: 400,
+          width: 240,
+        },
+        {
+          key: 'ip_address',
+          label: 'IP Address',
+          width: 240,
         },
       ],
       columns_e2: [
@@ -369,8 +371,14 @@ export default {
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 140,
+          width: 120,
           fixed: 'left',
+        },
+        {
+          key: 'phone_number',
+          label: 'Phone Number',
+          width: 240,
+          align: 'right',
         },
         {
           key: 'phone_number',
@@ -384,9 +392,19 @@ export default {
           width: 240,
         },
         {
+          key: 'email',
+          label: 'Email',
+          width: 240,
+        },
+        {
           key: 'ip_address',
           label: 'IP Address',
-          width: 400,
+          width: 240,
+        },
+        {
+          key: 'ip_address',
+          label: 'IP Address',
+          width: 240,
         },
       ],
       columns_e3: [
@@ -394,7 +412,16 @@ export default {
           key: 'ip_address',
           label: 'IP Address',
           width: 240,
-
+        },
+        {
+          key: 'ip_address',
+          label: 'IP Address',
+          width: 240,
+        },
+        {
+          key: 'email',
+          label: 'Email',
+          width: 240,
         },
         {
           key: 'email',
@@ -422,7 +449,7 @@ export default {
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 140,
+          width: 120,
           fixed: 'right',
         },
       ],
@@ -440,6 +467,17 @@ export default {
           align: 'right',
         },
         {
+          key: 'phone_number',
+          label: 'Phone Number',
+          width: 240,
+          align: 'right',
+        },
+        {
+          key: 'email',
+          label: 'Email',
+          width: 240,
+        },
+        {
           key: 'email',
           label: 'Email',
           width: 240,
@@ -447,12 +485,17 @@ export default {
         {
           key: 'ip_address',
           label: 'IP Address',
-          width: 400,
+          width: 240,
+        },
+        {
+          key: 'ip_address',
+          label: 'IP Address',
+          width: 240,
         },
         {
           key: 'last_name',
           label: 'Last Name',
-          width: 140,
+          width: 120,
           fixed: 'right',
         },
       ],

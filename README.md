@@ -17,13 +17,13 @@ A VUE.js Base UI Library
   * ~~IE~~
   * Opera 42+
   * Safari 6.1+
-  
+
 * Mobile
   * Android Browser 46+
   * Android Chrome 81+
   * Android Firefox 68+
   * iOS Safari 6+
-  
+
 ### Features used cause compatibility
 
 * [CSS Variables](https://caniuse.com/#feat=css-variables)
@@ -51,8 +51,8 @@ A VUE.js Base UI Library
   * [ ] Build `<at-button-grpup>`
 
 * [ ] [\<at-table>](./tree/master/components/AtTable)
-  * [ ] Improve `<at-table>` Fixed Column
-  * [ ] Build `<at-table>` Row Size
+  * [x] Improve `<at-table>` Fixed Column
+  * [x] Build `<at-table>` Row Size
   * [ ] Build `<at-table>` Selection
   * [ ] Build `<at-table>` Column Render Template
   * [ ] Build `<at-table>` Column Width Resizable

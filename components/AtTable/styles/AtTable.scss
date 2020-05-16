@@ -7,6 +7,7 @@
   --border-right: none;
 
   position: relative;
+  display: flow-root;
   overflow: auto;
   padding: 0 $size-base $size-base;
   background-color: $color-background;
@@ -57,8 +58,11 @@
     padding: 0 10px;
     line-height: 1.5em;
     vertical-align: middle;
+    word-break: break-all;
+    word-break: break-word; // not allow column width adaptation by long string.
   }
-
+  //
+  //
   &--border{
     border: solid 2px var(--border-color);
     --border-right: solid 1px var(--border-color);
@@ -78,31 +82,44 @@
     tbody{
       margin: 2px 0 0;
     }
-    #{$this}__cell{
-      word-break: break-all;
-      word-break: break-word; // "at-table--fixed" not allow column width adaptation by long .
-    }
   }
-
   &__th--sticky{
     position: sticky;
     background-color: rgba($color-background, 0.9);
     backdrop-filter: blur(2px);
     z-index: 2;
-
     &-left{
-      &:first-of-type{
+      &:first-child{
         box-shadow: #{-$size-base} 0 0 $color-background;
       }
     }
     &-right{
-      &:last-of-type{
+      &:last-child{
         box-shadow: #{$size-base} 0 0 $color-background;
       }
     }
   }
   //
   //
+  &--size-extra{
+    --size: #{$size-extra};
+  }
+  &--size-large{
+    --size: #{$size-large};
+  }
+  &--size-mini{
+    --size: #{$size-mini};
+  }
+  //
+  //
+  &--empty{
+
+  }
+  //
+  //
+  &--loading{
+
+  }
   //
   //
 

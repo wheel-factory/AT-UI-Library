@@ -1,18 +1,18 @@
 <template>
-  <div
-    class="example-container"
-  >
-    <div class="example-container__title">
-      {{ title }}
-    </div>
-    <div class="example-container__desc">
-      <slot name="desc" />
-    </div>
-    <div class="example-container__examples">
-      <slot />
-    </div>
-    <div class="example-container__code">
-      <slot name="code" />
+  <div class="example-container">
+    <div class="example-container__wrap">
+      <h5 class="example-container__title">
+        {{ title }}
+      </h5>
+      <div class="example-container__desc">
+        <slot name="desc" />
+      </div>
+      <div class="example-container__examples">
+        <slot />
+      </div>
+      <div class="example-container__code">
+        <slot name="code" />
+      </div>
     </div>
   </div>
 </template>
@@ -52,13 +52,14 @@ export default {
     top: -$height / 2;
     left: 10px;
 
-    background-color: $color-light;
-
     padding: 0 10px;
+    background-color: $color-light;
+    margin: 0;
 
     color: $color-dark-60;
     font-size: 14px;
     line-height: $height;
+    font-weight: normal;
 
     // text-transform: uppercase;
   }
