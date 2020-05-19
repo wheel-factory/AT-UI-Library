@@ -48,6 +48,9 @@ import AtTfoot from './components/AtTfoot.vue';
 //   return css;
 // }, {});
 
+const selectionColumnWidth = 32;
+const defaultFixedWidth = 100;
+
 export default {
   name: 'AtTable',
   components: {
@@ -97,6 +100,10 @@ export default {
       default: 'normal',
       validator: (size) => ['extra', 'large', 'normal', 'mini'].includes(size),
     },
+    selection: {
+      type: Boolean,
+      default: false,
+    },
   },
   provide() {
     const store = {};
@@ -117,35 +124,59 @@ export default {
         enumerable: true,
         get: () => this.fixed,
       },
+      selection: {
+        enumerable: true,
+        get: () => this.selection,
+      },
     });
     return store;
   },
   computed: {
     cols() {
-      // Need Improve: Modify to use reduce & reduceRight. And mark the first and last.
+      let cols = this.columns;
       if (this.fixed) {
-        // eslint-disable-next-line no-nested-ternary
-        const fixedLeftColWidth = this.columns.map((col) => (col.fixed === 'left' ? (col.width ? col.width : 0) : 0));
-        // eslint-disable-next-line no-nested-ternary
-        const fixedRightColWidth = this.columns.map((col) => (col.fixed === 'right' ? (col.width ? col.width : 0) : 0));
-        return this.columns.map((col, index) => {
+        let left = this.selection ? selectionColumnWidth : 0;
+        let foundLastFixedRight = false;
+        cols = cols.reduce((acc, cur) => {
+          const col = cur;
           if (col.fixed === 'left') {
-            return {
-              ...col,
-              left: fixedLeftColWidth.slice(0, index).reduce((acc, cur) => (acc + cur), 0),
-            };
+            col.left = left;
+            if (col.width !== undefined) {
+              left += col.width;
+            } else {
+              left += defaultFixedWidth;
+              throw new Error('The width of fixed column is required.');
+            }
           }
+          if (!foundLastFixedRight && col.fixed === 'right') {
+            foundLastFixedRight = true;
+            col.lastFixedRight = true;
+          }
+          acc.push(col);
+          return acc;
+        }, []);
+        let right = 0;
+        let foundLastFixedLeft = false;
+        cols = cols.reduceRight((acc, cur) => {
+          const col = cur;
           if (col.fixed === 'right') {
-            return {
-              ...col,
-              right: fixedRightColWidth.slice(index + 1).reduce((acc, cur) => (acc + cur), 0),
-            };
+            col.right = right;
+            if (col.width !== undefined) {
+              right += col.width;
+            } else {
+              right += defaultFixedWidth;
+              throw new Error('The width of fixed column is required.');
+            }
           }
-          return col;
-        });
+          if (!foundLastFixedLeft && col.fixed === 'left') {
+            foundLastFixedLeft = true;
+            col.lastFixedLeft = true;
+          }
+          acc.push(col);
+          return acc;
+        }, []).reverse();
       }
-
-      return this.columns;
+      return cols;
     },
 
     width() {

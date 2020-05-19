@@ -9,6 +9,7 @@
       <AtTableSize />
       <AtTableFixedHead />
       <AtTableFixedColumn />
+      <AtTableSelection />
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@ import AtTableStriped from './sections/3.AtTableStriped.vue';
 import AtTableSize from './sections/4.AtTableSize.vue';
 import AtTableFixedHead from './sections/5.AtTableFixedHead.vue';
 import AtTableFixedColumn from './sections/6.AtTableFixedColumn.vue';
+import AtTableSelection from './sections/7.AtTableSelection.vue';
 
 export default {
   name: 'ViewAtTable',
@@ -32,6 +34,7 @@ export default {
     AtTableSize,
     AtTableFixedHead,
     AtTableFixedColumn,
+    AtTableSelection,
   },
 };
 </script>

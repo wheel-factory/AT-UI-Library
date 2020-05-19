@@ -1,15 +1,18 @@
 <template>
   <section
-    id="base"
-    class="section section-at-table-base"
+    id="selection"
+    class="section section-at-table-selection"
   >
-    <ExampleContainer
-      title="AtTable Base"
-    >
+    <ExampleContainer title="AtTable Selection">
       <at-table
         at-id="example-table"
         :rows="table.data"
         :columns="table.columns"
+        fixed
+        selection
+        style="
+          height: 380px;
+        "
       />
     </ExampleContainer>
   </section>
@@ -19,15 +22,16 @@
 import dataSource from './dataSource';
 
 export default {
-  name: 'AtTableBase',
+  name: 'AtTableSelection',
   data: () => ({
     table: {
-      data: dataSource.slice(0, 8),
+      data: dataSource.slice(0, 32),
       columns: [
         {
           key: 'first_name',
           label: 'First Name',
           width: 120,
+          fixed: 'left',
         },
         {
           key: 'last_name',
@@ -37,12 +41,23 @@ export default {
         {
           key: 'email',
           label: 'Email',
+          width: 280,
         },
         {
           key: 'phone_number',
           label: 'Phone Number',
           width: 160,
           align: 'right',
+        },
+        {
+          key: 'street_address',
+          label: 'Address',
+          width: 280,
+        },
+        {
+          key: 'street_address',
+          label: 'Address',
+          width: 280,
         },
         {
           key: 'city',

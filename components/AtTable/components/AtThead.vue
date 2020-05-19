@@ -2,6 +2,11 @@
   <thead class="at-table__thead">
     <colgroup>
       <col
+        v-if="selection"
+        style="width: 32px;"
+        width="32"
+      >
+      <col
         v-for="(col, index) in cols"
         :key="`col-${index+1}`"
         :class="{
@@ -15,10 +20,30 @@
     </colgroup>
     <tr class="at-table__thead-tr">
       <th
+        v-if="selection"
+        class="at-table__select at-table__select-all at-table__thead-th"
+        :class="{
+          'at-table__th--sticky': fixed,
+          'at-table__th--sticky-left': fixed,
+        }"
+        :style="{
+          width: '32px',
+          top: fixed ? 0 : undefined,
+          left: fixed ? 0 : undefined,
+          'z-index': fixed ? 4 : undefined,
+        }"
+      >
+        <span class="at-table__cell">
+          <input
+            type="checkbox"
+          >
+        </span>
+      </th>
+      <th
         v-for="(col, index) in cols"
         :key="`col-${index+1}`"
+        class="at-table__thead-th"
         :class="{
-          'at-table__thead-th': true,
           'at-table__th--sticky': fixed,
           'at-table__th--sticky-left': col.fixed === 'left',
           'at-table__th--sticky-right': col.fixed === 'right',
@@ -45,7 +70,7 @@ import kebabCase from 'lodash/kebabCase';
 export default {
   name: 'AtThead',
   parent: 'AtTable',
-  inject: ['atId', 'cols', 'fixed'],
+  inject: ['atId', 'cols', 'fixed', 'selection'],
   computed: {
     atIdKebabCase() {
       return kebabCase(this.atId);
