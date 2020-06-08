@@ -14,18 +14,22 @@
           height: 380px;
         "
       />
+      <button @click="()=>{ table.data[6].last_name= 'Zhao' }">
+        Update
+      </button>
     </ExampleContainer>
   </section>
 </template>
 
 <script>
-import dataSource from './dataSource';
+import dataSource from './dataSourceBigArray';
 
 export default {
   name: 'AtTableSelection',
   data: () => ({
     table: {
-      data: dataSource.slice(0, 32),
+      data: dataSource,
+      // data: dataSource.slice(0, 32),
       columns: [
         {
           key: 'first_name',

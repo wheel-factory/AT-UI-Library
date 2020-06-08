@@ -1,5 +1,5 @@
 module.exports = {
-  outputDir: 'demo',
+  outputDir: 'docs',
   pages: {
     examples: {
       entry: 'examples/main.js',

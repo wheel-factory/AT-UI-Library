@@ -12,17 +12,19 @@
       }"
     >
       <span class="at-table__cell">
-        <input
-          type="checkbox"
-        >
+        <AtCheckbox
+          class="at-table__select-row-checkbox"
+          :checked="localRow && localRow.isSelected"
+          @change="(state)=>{ handleCheckboxChange(row, state); }"
+        />
       </span>
     </th>
     <template
-      v-for="(col, index) in cols"
+      v-for="(col, colIndex) in cols"
     >
       <th
         v-if="col.fixed"
-        :key="`cell-${index}`"
+        :key="`cell-${colIndex}`"
         class="at-table__th"
         :class="{
           'at-table__th--sticky': col.fixed,
@@ -40,7 +42,7 @@
       </th>
       <td
         v-else
-        :key="`cell-${index}`"
+        :key="`cell-${colIndex}`"
         class="at-table__td"
       >
         <span class="at-table__cell">
@@ -52,18 +54,44 @@
 </template>
 
 <script>
+import AtCheckbox from '../../AtCheckbox/AtCheckbox.vue';
+
 export default {
   name: 'AtTr',
   inject: [
     'cols',
     'fixed',
     'selection',
+    'selectRow',
   ],
+  components: {
+    AtCheckbox,
+  },
   props: {
+    rowIndex: {
+      type: Number,
+      required: true,
+    },
     row: {
       type: Object,
       required: true,
-      default: () => ({}),
+    },
+    localRow: {
+      type: Object,
+      default: () => (undefined),
+    },
+  },
+  updated() {
+    // ------ ------ ------ ------ ------ ------ ------
+    console.log('5', 'at-table__tr--updated', performance.now());
+    // ------ ------ ------ ------ ------ ------ ------
+  },
+  methods: {
+    handleCheckboxChange(row, state) {
+      // ------ ------ ------ ------ ------ ------ ------
+      console.log('2', 'at-table__tr', performance.now());
+      // ------ ------ ------ ------ ------ ------ ------
+      this.selectRow(row, state);
     },
   },
 };

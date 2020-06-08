@@ -17,11 +17,9 @@
         width: width ? `${width}px` : undefined,
       }"
     >
-      <at-thead />
-      <at-tbody />
-      <at-tfoot
-        v-if="false"
-      />
+      <at-thead :is-selected-all="isSelectedAll" />
+      <at-tbody :local-rows="localRows" />
+      <at-tfoot v-if="false" />
     </table>
     <!-- </div> -->
   </div>
@@ -51,6 +49,8 @@ import AtTfoot from './components/AtTfoot.vue';
 const selectionColumnWidth = 32;
 const defaultFixedWidth = 100;
 
+let performanceTimer = 0;
+
 export default {
   name: 'AtTable',
   components: {
@@ -77,11 +77,6 @@ export default {
     columns: {
       type: Array,
       required: true,
-      default: () => ([]),
-      // validator: (cols) => {
-      //   console.log('AtTable columns:', cols);
-      //   return true;
-      // },
     },
     border: {
       type: Boolean,
@@ -106,8 +101,8 @@ export default {
     },
   },
   provide() {
-    const store = {};
-    Object.defineProperties(store, {
+    const provide = {};
+    Object.defineProperties(provide, {
       atId: {
         enumerable: true,
         get: () => this.atId,
@@ -128,8 +123,26 @@ export default {
         enumerable: true,
         get: () => this.selection,
       },
+      data: {
+        enumerable: true,
+        get: () => this.$data,
+      },
+      selectAll: {
+        enumerable: true,
+        value: this.selectAll,
+      },
+      selectRow: {
+        enumerable: true,
+        value: this.selectRow,
+      },
     });
-    return store;
+    return provide;
+  },
+  data() {
+    return {
+      isSelectedAll: false,
+      localRows: {},
+    };
   },
   computed: {
     cols() {
@@ -178,11 +191,15 @@ export default {
       }
       return cols;
     },
-
     width() {
       return this.cols.reduce((acc, cur) => (acc + Number(cur.width)), 0) || undefined;
     },
-
+    selectedRows() {
+      return Object.values(this.localRows).filter((row) => (row.isSelected === true));
+    },
+  },
+  beforeCreate() {
+    performanceTimer = performance.now();
   },
   created() {
     // injectCss(this.atId, this.cols.reduce((css, col, index) => {
@@ -197,9 +214,47 @@ export default {
     //   return css;
     // }, {}));
   },
+  mounted() {
+    console.log('Performance:', performance.now() - performanceTimer);
+  },
+  methods: {
+    initLocalRows() {
+
+    },
+    selectAll(state) {
+      this.isSelectedAll = state;
+      this.$emit('select-all');
+    },
+    selectRow(row, state) {
+      if (this.localRows[row.id] === undefined) {
+        this.$set(this.localRows, row.id, {});
+      }
+      this.localRows[row.id].pointer = row;
+      if (this.localRows[row.id].isSelected === undefined) {
+        this.$set(this.localRows[row.id], 'isSelected', state);
+      } else {
+        this.localRows[row.id].isSelected = state;
+      }
+      // ------ ------ ------ ------ ------ ------ ------
+      console.log('3', 'selectRow', performance.now());
+      // ------ ------ ------ ------ ------ ------ ------
+      this.$emit('select-row');
+      this.$emit('selection-change');
+      // this.updateSelectAll();
+    },
+    updateSelectAll() {
+      if (this.selectedRows.length === 0) {
+        this.isSelectedAll = false;
+      } else if (this.selectedRows.length === this.rows.length) {
+        this.isSelectedAll = true;
+      } else {
+        this.isSelectedAll = 'indeterminate';
+      }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-@import './styles/AtTable.scss';
+@import './AtTable.scss';
 </style>

@@ -40,13 +40,11 @@
 <script>
 import dataSource from './dataSource';
 
-
 export default {
   name: 'AtTableSize',
   data: () => ({
     table: {
       data: dataSource.slice(0, 8),
-
       columns: [
         {
           key: 'first_name',

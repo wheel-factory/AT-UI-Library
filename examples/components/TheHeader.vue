@@ -60,7 +60,7 @@ export default {
   width: 180px;
   height: 32px;
   padding: 0;
-  // background-color: $color-dark-20;
+  // background: $color-dark-20;
   margin: 8px;
   line-height: 32px;
 }

@@ -3,7 +3,9 @@
     <at-tr
       v-for="(row, index) in rows"
       :key="`row-${index}`"
+      :row-index="index"
       :row="row"
+      :local-row="localRows[row.id]"
     />
   </tbody>
 </template>
@@ -15,7 +17,18 @@ export default {
   name: 'AtTbody',
   parent: 'AtTable',
   components: { AtTr },
+  props: {
+    localRows: {
+      type: Object,
+      required: true,
+    },
+  },
   inject: ['cols', 'rows'],
+  updated() {
+    // ------ ------ ------ ------ ------ ------ ------
+    console.log('4', 'at-table__tbody--update', performance.now());
+    // ------ ------ ------ ------ ------ ------ ------
+  },
 };
 </script>
 
