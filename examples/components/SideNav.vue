@@ -100,7 +100,7 @@ export default {
       color: $color-major;
     }
     &--active{
-      background-color: rgba($color-major, .32);
+      background: rgba($color-major, .32);
     }
   }
 

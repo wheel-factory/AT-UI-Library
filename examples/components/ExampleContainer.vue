@@ -53,7 +53,7 @@ export default {
     left: 10px;
 
     padding: 0 10px;
-    background-color: $color-light;
+    background: $color-light;
     margin: 0;
 
     color: $color-dark-60;

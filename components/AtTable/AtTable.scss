@@ -10,7 +10,7 @@
   display: flow-root;
   overflow: auto;
   padding: 0 $size-base $size-base;
-  background-color: $color-background;
+  background: $color-background;
 
   // &__wrap{
   //   width: 100%;
@@ -39,7 +39,7 @@
   &__tr{
     &:hover {
       th, td{
-        background-color: $color-light;
+        background: $color-light;
       }
     }
   }
@@ -71,7 +71,7 @@
   //
   &--striped {
     #{$this}__tr:nth-of-type(even){
-      background-color: $color-striped;
+      background: $color-striped;
     }
   }
   //
@@ -85,8 +85,8 @@
   }
   &__th--sticky{
     position: sticky;
-    background-color: rgba($color-background, 0.9);
-    backdrop-filter: blur(2px);
+    background: rgba($color-background, 0.9);
+    // backdrop-filter: blur(2px); // Page rendering performance issues
     z-index: 2;
     &-left{
       &:first-child{

@@ -34,9 +34,11 @@
         }"
       >
         <span class="at-table__cell">
-          <input
-            type="checkbox"
-          >
+          <AtCheckbox
+            :checked="isSelectedAll === true"
+            :indeterminate="isSelectedAll === 'indeterminate'"
+            @change="selectAll"
+          />
         </span>
       </th>
       <th
@@ -66,15 +68,33 @@
 
 <script>
 import kebabCase from 'lodash/kebabCase';
+import AtCheckbox from '../../AtCheckbox/AtCheckbox.vue';
 
 export default {
   name: 'AtThead',
   parent: 'AtTable',
-  inject: ['atId', 'cols', 'fixed', 'selection'],
-  computed: {
-    atIdKebabCase() {
-      return kebabCase(this.atId);
+  components: {
+    AtCheckbox,
+  },
+  props: {
+    isSelectedAll: {
+      type: [Boolean, String],
+      default: false,
+      validator: (state) => ([false, 'indeterminate', true].includes(state)),
     },
+  },
+  inject: [
+    'atId',
+    'cols',
+    'fixed',
+    'selection',
+    'data',
+    'selectAll',
+  ],
+  computed: {
+    // atIdKebabCase() {
+    //   return kebabCase(this.atId);
+    // },
   },
   methods: {
     kebabCase,

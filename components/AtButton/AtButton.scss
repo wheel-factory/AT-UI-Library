@@ -58,7 +58,7 @@
     border-color: var(--color-base);
   }
   &.major, &.submit {
-    background-color: var(--color-base);
+    background: var(--color-base);
     border-color: var(--color-base);
     color: $color-lightest;
   }
