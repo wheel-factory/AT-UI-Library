@@ -14,9 +14,6 @@
           height: 380px;
         "
       />
-      <button @click="()=>{ table.data[6].last_name= 'Zhao' }">
-        Update
-      </button>
     </ExampleContainer>
   </section>
 </template>

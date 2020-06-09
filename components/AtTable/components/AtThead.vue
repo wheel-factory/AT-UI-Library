@@ -3,8 +3,8 @@
     <colgroup>
       <col
         v-if="selection"
-        style="width: 32px;"
-        width="32"
+        style="width: 34px;"
+        width="34"
       >
       <col
         v-for="(col, index) in cols"
@@ -26,12 +26,6 @@
           'at-table__th--sticky': fixed,
           'at-table__th--sticky-left': fixed,
         }"
-        :style="{
-          width: '32px',
-          top: fixed ? 0 : undefined,
-          left: fixed ? 0 : undefined,
-          'z-index': fixed ? 4 : undefined,
-        }"
       >
         <span class="at-table__cell">
           <AtCheckbox
@@ -52,10 +46,8 @@
         }"
         :style="{
           width: col.width ? col.width + 'px' : undefined,
-          top: fixed ? 0 : undefined,
           left: col.left && `${col.left}px`,
           right: col.right && `${col.right}px`,
-          'z-index': col.fixed ? 4 : undefined,
         }"
       >
         <span class="at-table__cell">

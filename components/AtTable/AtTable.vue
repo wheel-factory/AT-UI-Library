@@ -50,8 +50,6 @@ import AtTfoot from './components/AtTfoot.vue';
 const selectionColumnWidth = 34;
 const defaultFixedWidth = 100;
 
-let performanceTimer = 0;
-
 export default {
   name: 'AtTable',
   components: {
@@ -196,16 +194,6 @@ export default {
       return Object.values(this.localRows).filter((row) => (row.isSelected === true));
     },
   },
-  watch: {
-    localRows() {
-      // ------ ------ ------ ------ ------ ------ ------
-      console.log('4', 'AtTable Watch "localRows"', performance.now());
-      // ------ ------ ------ ------ ------ ------ ------
-    },
-  },
-  beforeCreate() {
-    performanceTimer = performance.now();
-  },
   created() {
     // injectCss(this.atId, this.cols.reduce((css, col, index) => {
     //   Object.defineProperties(css, {
@@ -219,15 +207,11 @@ export default {
     //   return css;
     // }, {}));
   },
-  mounted() {
-    console.log('Performance:', performance.now() - performanceTimer);
-  },
   methods: {
     initLocalRows() {
 
     },
     selectAll(state) {
-      console.time('Select All');
       this.isSelectedAll = state;
       this.runing = state ? 'selecting-all' : 'deselecting-all';
       this.$nextTick().then(() => {
@@ -244,7 +228,6 @@ export default {
       this.$nextTick().then(() => { this.runing = false; });
       this.$emit('select-all');
       this.$emit('selection-change');
-      console.timeEnd('Select All');
     },
     selectRow(row, state) {
       if (this.localRows[row.id] === undefined) {
@@ -254,9 +237,6 @@ export default {
         });
       }
       this.localRows[row.id].isSelected = state;
-      // ------ ------ ------ ------ ------ ------ ------
-      // console.log('3', 'selectRow', performance.now());
-      // ------ ------ ------ ------ ------ ------ ------
       this.$emit('select-row');
       this.$emit('selection-change');
       this.updateSelectAll();

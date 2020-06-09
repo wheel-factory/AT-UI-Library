@@ -3,12 +3,12 @@
     <div class="view__wrap">
       <AtTableIntro />
       <h4>Examples</h4>
-      <AtTableBase v-if="false" />
-      <AtTableBorder v-if="false" />
-      <AtTableStriped v-if="false" />
-      <AtTableSize v-if="false" />
-      <AtTableFixedHead v-if="false" />
-      <AtTableFixedColumn v-if="false" />
+      <AtTableBase />
+      <AtTableBorder />
+      <AtTableStriped />
+      <AtTableSize />
+      <AtTableFixedHead />
+      <AtTableFixedColumn />
       <AtTableSelection />
     </div>
   </div>

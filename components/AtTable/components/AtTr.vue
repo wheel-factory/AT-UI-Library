@@ -7,15 +7,12 @@
         'at-table__th--sticky': fixed,
         'at-table__th--sticky-left': fixed,
       }"
-      :style="{
-        left: 0,
-      }"
     >
       <span class="at-table__cell">
         <AtCheckbox
           class="at-table__select-row-checkbox"
           :checked="localRow && localRow.isSelected"
-          @change="(state)=>{ handleCheckboxChange(row, state); }"
+          @change="(state)=>{ selectRow(row, state); }"
         />
       </span>
     </th>
@@ -79,26 +76,6 @@ export default {
     localRow: {
       type: Object,
       default: () => (undefined),
-    },
-  },
-  watch: {
-    localRow() {
-      // ------ ------ ------ ------ ------ ------ ------
-      // console.log('6', 'AtTr Watch "localRow"', performance.now());
-      // ------ ------ ------ ------ ------ ------ ------
-    },
-  },
-  updated() {
-    // ------ ------ ------ ------ ------ ------ ------
-    // console.log('9', 'at-table__tr--updated', performance.now());
-    // ------ ------ ------ ------ ------ ------ ------
-  },
-  methods: {
-    handleCheckboxChange(row, state) {
-      // ------ ------ ------ ------ ------ ------ ------
-      // console.log('2', 'at-table__tr', performance.now());
-      // ------ ------ ------ ------ ------ ------ ------
-      this.selectRow(row, state);
     },
   },
 };

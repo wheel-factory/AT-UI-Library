@@ -24,18 +24,6 @@ export default {
     },
   },
   inject: ['cols', 'rows'],
-  watch: {
-    localRows() {
-      // ------ ------ ------ ------ ------ ------ ------
-      // console.log('5', 'AtTbody Watch "localRows"', performance.now());
-      // ------ ------ ------ ------ ------ ------ ------
-    },
-  },
-  updated() {
-    // ------ ------ ------ ------ ------ ------ ------
-    // console.log('10', 'at-table__tbody--update', performance.now(), '\n\n');
-    // ------ ------ ------ ------ ------ ------ ------
-  },
 };
 </script>
 
