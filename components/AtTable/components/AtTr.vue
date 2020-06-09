@@ -81,15 +81,22 @@ export default {
       default: () => (undefined),
     },
   },
+  watch: {
+    localRow() {
+      // ------ ------ ------ ------ ------ ------ ------
+      // console.log('6', 'AtTr Watch "localRow"', performance.now());
+      // ------ ------ ------ ------ ------ ------ ------
+    },
+  },
   updated() {
     // ------ ------ ------ ------ ------ ------ ------
-    console.log('5', 'at-table__tr--updated', performance.now());
+    // console.log('9', 'at-table__tr--updated', performance.now());
     // ------ ------ ------ ------ ------ ------ ------
   },
   methods: {
     handleCheckboxChange(row, state) {
       // ------ ------ ------ ------ ------ ------ ------
-      console.log('2', 'at-table__tr', performance.now());
+      // console.log('2', 'at-table__tr', performance.now());
       // ------ ------ ------ ------ ------ ------ ------
       this.selectRow(row, state);
     },

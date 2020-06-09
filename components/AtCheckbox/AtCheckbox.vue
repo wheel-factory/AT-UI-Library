@@ -45,9 +45,16 @@ export default {
       default: false,
     },
   },
+  watch: {
+    checked() {
+      // ------ ------ ------ ------ ------ ------ ------
+      // console.log('7', 'AtCheckbox Watch "checked"', performance.now());
+      // ------ ------ ------ ------ ------ ------ ------
+    },
+  },
   // ------ ------ ------ ------ ------ ------ ------
   updated() {
-    console.log('6', 'at-checkbox--updated', performance.now());
+    // console.log('8', 'at-checkbox--updated', performance.now());
   },
   // ------ ------ ------ ------ ------ ------ ------
   methods: {
@@ -59,7 +66,7 @@ export default {
     },
     onChange(event) {
       // ------ ------ ------ ------ ------ ------ ------
-      console.log('1', 'at-checkbox--trigger', performance.now());
+      // console.log('1', 'at-checkbox--trigger', performance.now());
       // ------ ------ ------ ------ ------ ------ ------
       this.$emit('change', event.target.checked);
     },

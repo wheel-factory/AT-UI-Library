@@ -112,6 +112,22 @@
   }
   //
   //
+  &--selecting-all{
+    .at-table__select-row-checkbox{
+      --border-color: #{$color-major};
+      --core-color: #{$color-major};
+      pointer-events: none;
+    }
+  }
+  &--deselecting-all{
+    .at-table__select-row-checkbox{
+      --border-color: #{$color-dark-40};
+      --core-color: #{$color-dark-10};
+      pointer-events: none;
+    }
+  }
+  //
+  //
   &--empty{
 
   }

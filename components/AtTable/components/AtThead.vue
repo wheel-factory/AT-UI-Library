@@ -88,7 +88,6 @@ export default {
     'cols',
     'fixed',
     'selection',
-    'data',
     'selectAll',
   ],
   computed: {

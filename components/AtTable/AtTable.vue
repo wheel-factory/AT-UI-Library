@@ -8,6 +8,7 @@
       'at-table--fixed': fixed,
       'at-table--striped': striped,
       [`at-table--size-${size}`]: size !== 'normal',
+      [`at-table--${runing}`]: runing,
     }"
   >
     <!-- <div class="at-table__wrap"> -->
@@ -46,7 +47,7 @@ import AtTfoot from './components/AtTfoot.vue';
 //   return css;
 // }, {});
 
-const selectionColumnWidth = 32;
+const selectionColumnWidth = 34;
 const defaultFixedWidth = 100;
 
 let performanceTimer = 0;
@@ -123,10 +124,6 @@ export default {
         enumerable: true,
         get: () => this.selection,
       },
-      data: {
-        enumerable: true,
-        get: () => this.$data,
-      },
       selectAll: {
         enumerable: true,
         value: this.selectAll,
@@ -141,6 +138,7 @@ export default {
   data() {
     return {
       isSelectedAll: false,
+      runing: false,
       localRows: {},
     };
   },
@@ -198,6 +196,13 @@ export default {
       return Object.values(this.localRows).filter((row) => (row.isSelected === true));
     },
   },
+  watch: {
+    localRows() {
+      // ------ ------ ------ ------ ------ ------ ------
+      console.log('4', 'AtTable Watch "localRows"', performance.now());
+      // ------ ------ ------ ------ ------ ------ ------
+    },
+  },
   beforeCreate() {
     performanceTimer = performance.now();
   },
@@ -222,25 +227,39 @@ export default {
 
     },
     selectAll(state) {
+      console.time('Select All');
       this.isSelectedAll = state;
+      this.runing = state ? 'selecting-all' : 'deselecting-all';
+      this.$nextTick().then(() => {
+        this.rows.forEach((row) => {
+          if (this.localRows[row.id] === undefined) {
+            this.$set(this.localRows, row.id, {
+              pointer: row,
+              isSelected: state,
+            });
+          }
+          this.localRows[row.id].isSelected = state;
+        });
+      });
+      this.$nextTick().then(() => { this.runing = false; });
       this.$emit('select-all');
+      this.$emit('selection-change');
+      console.timeEnd('Select All');
     },
     selectRow(row, state) {
       if (this.localRows[row.id] === undefined) {
-        this.$set(this.localRows, row.id, {});
+        this.$set(this.localRows, row.id, {
+          pointer: row,
+          isSelected: state,
+        });
       }
-      this.localRows[row.id].pointer = row;
-      if (this.localRows[row.id].isSelected === undefined) {
-        this.$set(this.localRows[row.id], 'isSelected', state);
-      } else {
-        this.localRows[row.id].isSelected = state;
-      }
+      this.localRows[row.id].isSelected = state;
       // ------ ------ ------ ------ ------ ------ ------
-      console.log('3', 'selectRow', performance.now());
+      // console.log('3', 'selectRow', performance.now());
       // ------ ------ ------ ------ ------ ------ ------
       this.$emit('select-row');
       this.$emit('selection-change');
-      // this.updateSelectAll();
+      this.updateSelectAll();
     },
     updateSelectAll() {
       if (this.selectedRows.length === 0) {
