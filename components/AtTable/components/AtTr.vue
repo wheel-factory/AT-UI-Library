@@ -65,10 +65,6 @@ export default {
     AtCheckbox,
   },
   props: {
-    rowIndex: {
-      type: Number,
-      required: true,
-    },
     row: {
       type: Object,
       required: true,

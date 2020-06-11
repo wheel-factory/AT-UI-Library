@@ -3,7 +3,6 @@
     <at-tr
       v-for="(row, index) in rows"
       :key="`row-${index}`"
-      :row-index="index"
       :row="row"
       :local-row="localRows[row.id]"
     />

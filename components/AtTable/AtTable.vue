@@ -98,6 +98,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    selectionType: {
+      type: String,
+      default: 'checkbox',
+      validator: (type) => ['checkbox', 'radio'].includes(type),
+    },
   },
   provide() {
     const provide = {};
