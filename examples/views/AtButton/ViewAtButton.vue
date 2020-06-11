@@ -1,11 +1,13 @@
 <template>
   <div class="view view-at-button">
-    <AtButtonIntro />
-    <h4>Examples</h4>
-    <AtButtonType />
-    <AtButtonShape />
-    <AtButtonSize />
-    <AtButtonState />
+    <div class="view__wrap">
+      <AtButtonIntro />
+      <h4>Examples</h4>
+      <AtButtonType />
+      <AtButtonShape />
+      <AtButtonSize />
+      <AtButtonState />
+    </div>
   </div>
 </template>
 

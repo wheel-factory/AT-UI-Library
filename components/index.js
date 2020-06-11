@@ -1,12 +1,15 @@
 import AtButton from './AtButton';
 import AtButtonGroup from './AtButtonGroup';
-
+import AtCheckbox from './AtCheckbox';
+import AtRadio from './AtRadio';
 import AtTable from './AtTable';
+
 
 const components = [
   AtButton,
   AtButtonGroup,
-
+  AtRadio,
+  AtCheckbox,
   AtTable,
 ];
 
@@ -23,6 +26,6 @@ export default {
   install,
   AtButton,
   AtButtonGroup,
-
+  AtRadio,
   AtTable,
 };

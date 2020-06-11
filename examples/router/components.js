@@ -27,6 +27,15 @@ export default [
     ),
   },
   {
+    path: '/components/at-Selection',
+    name: 'Selection',
+    group: 'interactive',
+    component: () => import(
+      /* webpackChunkName: "view-at-Selection" */
+      '../views/AtSelection/ViewAtSelection.vue'
+    ),
+  },
+  {
     path: '/components/at-input',
     name: 'Input',
     group: 'interactive',

@@ -1,20 +1,26 @@
 <template>
   <label
-    class="at-checkbox"
+    class="at-radio"
     :class="{
-      'at-checkbox--checked': checked,
-      'at-checkbox--indeterminate': indeterminate,
+      'at-radio--checked': checked,
+      'at-radio--disabled': disabled,
     }"
   >
-    <span class="at-checkbox__symbol" />
+    <span class="at-radio__symbol" />
     <input
-      class="at-checkbox__original"
-      type="checkbox"
+      class="at-radio__original"
+      type="radio"
       :checked="checked"
       @focus="onFocus"
       @blur="onBlur"
       @change="onChange"
     >
+    <span
+      v-if="label !== undefined"
+      class="at-radio__label"
+    >
+      {{ label }}
+    </span>
   </label>
 </template>
 
@@ -22,7 +28,7 @@
 import uid from 'uid';
 
 export default {
-  name: 'AtCheckbox',
+  name: 'AtRadio',
   model: {
     prop: 'checked',
     event: 'change',
@@ -36,13 +42,13 @@ export default {
       type: Boolean,
       default: false,
     },
-    indeterminate: {
-      type: Boolean,
-      default: false,
-    },
     disabled: {
       type: Boolean,
       default: false,
+    },
+    label: {
+      type: [String, Number],
+      default: undefined,
     },
   },
   methods: {
@@ -60,5 +66,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import './AtCheckbox.scss';
+@import './AtRadio.scss';
 </style>
