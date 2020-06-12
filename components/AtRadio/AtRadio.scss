@@ -12,6 +12,7 @@
   $core-size: 8px;
 
   position: relative;
+  display: block;
   outline: none;
 
   &__symbol{
@@ -48,11 +49,11 @@
     line-height: var(--size);
   }
 
-  &:focus, &:focus-within, &:hover{
+  &:focus, &:focus-within, &:hover {
     --border-color: #{$color-major};
     --outline-color: #{rgba($color-major, .16)};
   }
-  &--checked{
+  &--checked {
     --border-color: #{$color-major};
     --core-color: #{$color-major};
     --label-color: #{$color-major};
@@ -60,10 +61,17 @@
       --core-color: #{$color-dark-20};
     }
   }
-  &--disabled{
-    --border-color: #{$color-dark-20};
+  &--disabled {
+    --border-color: #{$color-dark-20} !important;
+    --outline-color: transparent !important;
     --core-color: #{$color-light};
     --label-color: #{$color-dark-20};
+
+    cursor: not-allowed;
+
+    &:active {
+      pointer-events: none;
+    }
   }
 
 }

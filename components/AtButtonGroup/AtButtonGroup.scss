@@ -1,0 +1,13 @@
+.at-button-group {
+  $spacing: $size-base * 2;
+  $spacing-x: $spacing;
+  $spacing-y: $spacing;
+
+  &__inner{
+    margin: 0 (-$spacing-x) (-$spacing-y) 0;
+  }
+
+  .at-button{
+    margin: 0 $spacing-x $spacing-y 0;
+  }
+}

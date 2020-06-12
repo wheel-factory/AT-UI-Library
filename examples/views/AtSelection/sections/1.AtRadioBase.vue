@@ -6,22 +6,26 @@
     <ExampleContainer
       title="AtRadio Base"
     >
-      <at-radio
-        label="Unchecked"
-      />
-      <at-radio
-        checked
-        label="Checked"
-      />
-      <at-radio
-        disabled
-        label="Disabled"
-      />
-      <at-radio
-        checked
-        disabled
-        label="Disabled"
-      />
+      <dir class="at-radio-group">
+        <div class="at-radio-group__inner">
+          <at-radio
+            label="Unchecked"
+          />
+          <at-radio
+            checked
+            label="Checked"
+          />
+          <at-radio
+            disabled
+            label="Disabled"
+          />
+          <at-radio
+            checked
+            disabled
+            label="Disabled"
+          />
+        </div>
+      </dir>
     </ExampleContainer>
   </section>
 </template>

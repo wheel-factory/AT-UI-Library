@@ -13,17 +13,5 @@ export default {
 </script>
 
 <style lang="scss">
-.at-button-group {
-  $spacing: 10px;
-  $spacing-x: $spacing;
-  $spacing-y: $spacing;
-
-  &__inner{
-    margin: 0 (-$spacing-x) (-$spacing-y) 0;
-  }
-
-  .at-button{
-    margin: 0 $spacing-x $spacing-y 0;
-  }
-}
+@import './AtButtonGroup.scss';
 </style>

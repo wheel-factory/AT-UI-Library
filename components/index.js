@@ -2,6 +2,7 @@ import AtButton from './AtButton';
 import AtButtonGroup from './AtButtonGroup';
 import AtCheckbox from './AtCheckbox';
 import AtRadio from './AtRadio';
+import AtRadioGroup from './AtRadioGroup';
 import AtTable from './AtTable';
 
 
@@ -9,6 +10,7 @@ const components = [
   AtButton,
   AtButtonGroup,
   AtRadio,
+  AtRadioGroup,
   AtCheckbox,
   AtTable,
 ];
@@ -27,5 +29,6 @@ export default {
   AtButton,
   AtButtonGroup,
   AtRadio,
+  AtRadioGroup,
   AtTable,
 };
