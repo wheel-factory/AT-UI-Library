@@ -5,7 +5,7 @@
 
 A VUE.js Base UI Library
 
-
+[![Build Status](https://travis-ci.org/wheel-factory/AT-UI-Library.svg?branch=master)](https://travis-ci.org/wheel-factory/AT-UI-Library)
 --------
 
 ## Browser Compatibility
