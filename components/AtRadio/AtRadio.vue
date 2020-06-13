@@ -6,15 +6,16 @@
       'at-radio--disabled': disabled,
     }"
   >
-    <span class="at-radio__symbol" />
-    <input
-      class="at-radio__original"
-      type="radio"
-      :checked="checked"
-      @focus="onFocus"
-      @blur="onBlur"
-      @change="onChange"
-    >
+    <span class="at-radio__symbol">
+      <input
+        class="at-radio__original"
+        type="radio"
+        :checked="checked"
+        @focus="onFocus"
+        @blur="onBlur"
+        @change="onChange"
+      >
+    </span>
     <span
       v-if="label !== undefined"
       class="at-radio__label"

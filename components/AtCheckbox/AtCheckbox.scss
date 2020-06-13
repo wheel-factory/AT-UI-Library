@@ -1,7 +1,12 @@
 .at-checkbox{
+  $this: &;
+
+  --size: #{$size-normal};
+
   --border-color: #{$color-dark-40};
   --outline-color: transparent;
   --core-color: #{$color-dark-10};
+  --label-color: #{$color-dark-80};
 
   $size: 14px;
   $core-size: 8px;
@@ -10,18 +15,21 @@
   --core-margin: 2px;
 
   position: relative;
+  display: block;
   outline: none;
 
   &__symbol{
-    display: block;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
     width: $size;
     height: $size;
     background: $color-lightest;
     border: solid 1px var(--border-color);
     outline: solid 2px var(--outline-color);
-    margin: -1px 0 0;
+    margin: -3px 0 0;
 
-    &::after{
+    &::before{
       content: '';
       display: block;
       width: $core-size;
@@ -33,19 +41,42 @@
   &__original{
     position: absolute;
     top: 0;
+    left: 0;
     opacity: 0;
   }
+  &__label{
+    margin: 0 0 0 8px;
+    color: var(--label-color);
+    font-size: calc(var(--size) / 2 - var(--size) / 16);
+    line-height: var(--size);
+  }
 
-  &:focus, &:focus-within, &:hover{
+  &:focus, &:focus-within, &:hover {
     --border-color: #{$color-major};
     --outline-color: #{rgba($color-major, .16)};
   }
-  &--checked, &--indeterminate{
+  &--checked, &--indeterminate {
     --border-color: #{$color-major};
     --core-color: #{$color-major};
+    --label-color: #{$color-major};
+    &#{$this}--disabled{
+      --core-color: #{$color-dark-20};
+    }
   }
-  &--indeterminate{
+  &--indeterminate {
     --core-height: 2px;
     --core-margin: 5px 2px;
+  }
+  &--disabled {
+    --border-color: #{$color-dark-20} !important;
+    --outline-color: transparent !important;
+    --core-color: #{$color-light};
+    --label-color: #{$color-dark-20};
+
+    cursor: not-allowed;
+
+    &:active {
+      pointer-events: none;
+    }
   }
 }

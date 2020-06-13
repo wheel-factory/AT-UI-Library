@@ -4,17 +4,25 @@
     :class="{
       'at-checkbox--checked': checked,
       'at-checkbox--indeterminate': indeterminate,
+      'at-checkbox--disabled': disabled,
     }"
   >
-    <span class="at-checkbox__symbol" />
-    <input
-      class="at-checkbox__original"
-      type="checkbox"
-      :checked="checked"
-      @focus="onFocus"
-      @blur="onBlur"
-      @change="onChange"
+    <span class="at-checkbox__symbol">
+      <input
+        class="at-checkbox__original"
+        type="checkbox"
+        :checked="checked"
+        @focus="onFocus"
+        @blur="onBlur"
+        @change="onChange"
+      >
+    </span>
+    <span
+      v-if="label !== undefined"
+      class="at-checkbox__label"
     >
+      {{ label }}
+    </span>
   </label>
 </template>
 
@@ -43,6 +51,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    label: {
+      type: [String, Number],
+      default: undefined,
     },
   },
   methods: {

@@ -1,12 +1,14 @@
-.at-button-group {
-  $spacing-x: $size-base * 2;
+.at-checkbox-group {
+  $spacing-x: $size-base * 4;
   $spacing-y: $size-base * 2;
 
   &__inner{
+    display: flex;
     margin: 0 (-$spacing-x) (-$spacing-y) 0;
   }
 
-  .at-button{
+  .at-checkbox{
+    flex-shrink: 0;
     margin: 0 $spacing-x $spacing-y 0;
   }
 }

@@ -3,10 +3,8 @@
     id="intro"
     class="section section-at-radio-base"
   >
-    <ExampleContainer
-      title="AtRadio Base"
-    >
-      <dir class="at-radio-group">
+    <ExampleContainer title="AtRadio Base">
+      <div class="at-radio-group">
         <div class="at-radio-group__inner">
           <at-radio
             label="Unchecked"
@@ -25,7 +23,7 @@
             label="Disabled"
           />
         </div>
-      </dir>
+      </div>
     </ExampleContainer>
   </section>
 </template>
