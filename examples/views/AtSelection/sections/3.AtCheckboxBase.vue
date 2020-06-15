@@ -6,6 +6,10 @@
     <ExampleContainer
       title="AtCheckbox Base"
     >
+      <at-checkbox
+        v-model="atCheckbox"
+        label="AtCheckbox"
+      />
       <div class="at-checkbox-group">
         <div class="at-checkbox-group__inner">
           <at-checkbox
@@ -42,6 +46,9 @@
 <script>
 export default {
   name: 'SectionAtCheckboxBase',
+  data: () => ({
+    atCheckbox: false,
+  }),
 };
 </script>
 
