@@ -5,7 +5,7 @@
 
 A VUE.js Base UI Library
 
-[![Build Status](https://github.com/wheel-factory/AT-UI-Library/workflows/Build/badge.svg?branch=master)](https://github.com/wheel-factory/AT-UI-Library/actions)
+[![Build Status](https://github.com/lanezhao/AT-UI-Library/workflows/Build/badge.svg?branch=master)](https://github.com/wheel-factory/AT-UI-Library/actions)
 
 --------
 
