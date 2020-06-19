@@ -7,6 +7,7 @@ module.exports = {
       filename: 'index.html',
     },
   },
+  publicPath: process.env.NODE_ENV === 'production' ? '/AT-UI-Library/' : '/',
   // chainWebpack: (config) => {
   //   config.module
   //     .rule('js')

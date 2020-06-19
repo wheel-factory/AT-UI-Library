@@ -5,7 +5,8 @@ import routes from './routes';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: 'history',
+  // Github pages doesn't work with "history" mode
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes,
 });
